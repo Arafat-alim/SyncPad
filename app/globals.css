@@ -206,6 +206,10 @@
   height: 52px;
 }
 
+.cl-internal-10njacc {
+  font-size: 0.6rem;
+}
+
 /* ======================== Liveblocks Override */
 .lb-root {
   --lb-accent-subtle: #0b1527;
