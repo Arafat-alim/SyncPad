@@ -5,8 +5,10 @@ import React from "react";
 const Document = () => {
   return (
     <div>
-      <Header>
-        <p className="text-white">Hello</p>
+      <Header className="header">
+        <div className="flex w-fit items-center justify-center gap-2">
+          <p className="document-title">This is a fake document Title</p>
+        </div>
       </Header>
       <Editor />
     </div>

@@ -10,7 +10,7 @@ const Header = ({ children, className }: HeaderProps) => {
         <Image
           src="/assets/icons/logo.svg"
           alt="sync-pad-logo-with-name"
-          width={100}
+          width={220}
           height={32}
           className="hidden md:block"
         />
