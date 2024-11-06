@@ -10,7 +10,12 @@ export const createDocuments = async ({
   email,
 }: CreateDocumentParams) => {
   const roomId = nanoid();
-  console.log("___", roomId);
+
+  // TODO: Need to remove this in future.
+  if (!userId || !email) {
+    console.error("Something went missing...");
+    return;
+  }
 
   try {
     //! before creating the room, we need to create a metadata
@@ -28,7 +33,7 @@ export const createDocuments = async ({
     const room = await liveblocks.createRoom(roomId, {
       metadata,
       usersAccesses,
-      defaultAccesses: [],
+      defaultAccesses: ["room:write"], // TODO: we need to change it back to empty array
     });
 
     revalidatePath("/"); // read more about at:https://nextjs.org/docs/app/api-reference/functions/revalidatePath
@@ -36,5 +41,30 @@ export const createDocuments = async ({
     return parseStringify(room);
   } catch (err) {
     console.log(`Error occured while creating a document: ${err}`);
+  }
+};
+
+export const getDocument = async ({
+  roomId,
+  userId,
+}: {
+  roomId: string;
+  userId: string;
+}) => {
+  if (!userId || !roomId) {
+    console.log("something went wrong");
+  }
+  try {
+    //! check if any rooms is present
+    const room = await liveblocks.getRoom(roomId);
+    //! check user has access
+    // const hasAccess = Object.keys(room.usersAccesses).includes(userId);
+    // if (!hasAccess) {
+    //   throw new Error("You do not have access to this document");
+    // }
+
+    return parseStringify(room);
+  } catch (err) {
+    console.log(`Error occured while fetching the documents: ${err}`);
   }
 };

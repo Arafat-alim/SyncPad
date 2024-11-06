@@ -1,18 +1,15 @@
 import AddDocumentBtn from "@/components/AddDocumentBtn";
 import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-import React from "react";
-
 const Home = async () => {
   //! Get the clerk user
   const clerkUser = await currentUser();
 
-  if (!clerkUser) redirect("sign-in");
+  if (!clerkUser) redirect("/sign-in");
 
   const documents = [];
   return (
@@ -36,7 +33,7 @@ const Home = async () => {
           />
           <AddDocumentBtn
             userId={clerkUser?.id}
-            email={clerkUser.emailAddresses[0].emailAddress}
+            email={clerkUser?.emailAddresses?.[0]?.emailAddress}
           />
         </div>
       )}
