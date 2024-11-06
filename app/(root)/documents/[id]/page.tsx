@@ -8,13 +8,19 @@ const Document = () => {
     <div>
       <Header className="header">
         <div className="flex w-fit items-center justify-center gap-2">
-          <p className="document-title">This is a fake document Title</p>
+          <p className="document-title">Share</p>
         </div>
         <SignedOut>
           <SignInButton />
         </SignedOut>
         <SignedIn>
-          <UserButton />
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: "w-[60px] h-[60px]",
+              },
+            }}
+          />
         </SignedIn>
       </Header>
       <Editor />
