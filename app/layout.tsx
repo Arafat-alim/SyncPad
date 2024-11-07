@@ -11,7 +11,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Sync Pad",
+  title: "Sync Pad - Bringing Teams Together, One Idea at a Time",
   description: "Your Go to Collaborative App",
 };
 
