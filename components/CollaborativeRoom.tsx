@@ -9,6 +9,7 @@ import ActiveCollaborators from "./ActiveCollaborators";
 import { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import { updateDocument } from "@/lib/actions/room.actions";
 
 const CollaborativeRoom = ({
   roomId,
@@ -21,7 +22,27 @@ const CollaborativeRoom = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLDivElement>(null);
-  const updateTitleHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {};
+
+  const updateTitleHandler = async (
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key === "Enter") {
+      setLoading(true);
+
+      try {
+        if (documentTitle !== roomMetadata.title) {
+          const updatedDocument = await updateDocument(roomId, documentTitle);
+
+          if (updatedDocument) {
+            setEditing(false);
+          }
+        }
+      } catch (err) {
+        console.log(`Error occured while updating the document Title: ${err}`);
+      }
+      setLoading(false);
+    }
+  };
 
   //! Click out the input close the title editor
   useEffect(() => {
@@ -31,6 +52,7 @@ const CollaborativeRoom = ({
         !containerRef.current.contains(e.target as Node)
       ) {
         setEditing(false);
+        updateDocument(roomId, documentTitle);
       }
     };
 
@@ -53,7 +75,14 @@ const CollaborativeRoom = ({
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [roomId, documentTitle]);
+
+  //! focus on editing text box
+  useEffect(() => {
+    if (editing && inputRef.current) {
+      inputRef.current.focus;
+    }
+  }, [editing]);
 
   return (
     <RoomProvider id={roomId}>
