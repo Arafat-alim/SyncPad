@@ -1,5 +1,3 @@
-// "use client";
-
 import CollaborativeRoom from "@/components/CollaborativeRoom";
 import { getDocument } from "@/lib/actions/room.actions";
 import { currentUser } from "@clerk/nextjs/server";
@@ -10,10 +8,6 @@ const Document = async ({ params: { id } }: SearchParamProps) => {
   const clerkUser = await currentUser();
 
   if (!clerkUser) redirect("/sign-in");
-
-  // if (!clerkUser) {
-  //   console.log("clerkUser__Document", clerkUser);
-  // }
 
   const room = await getDocument({
     roomId: id,
