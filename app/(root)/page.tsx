@@ -1,6 +1,7 @@
 import AddDocumentBtn from "@/components/AddDocumentBtn";
 import DeleteModal from "@/components/DeleteModal";
 import Header from "@/components/Header";
+import Notification from "@/components/Notification";
 import { getDocuments } from "@/lib/actions/room.actions";
 import { dateConverter } from "@/lib/utils";
 import { SignedIn, UserButton } from "@clerk/nextjs";
@@ -22,7 +23,7 @@ const Home = async () => {
   return (
     <main className="home-container">
       <Header className="sticky left-0 top-0">
-        Notification
+        <Notification />
         <SignedIn>
           <UserButton />
         </SignedIn>
