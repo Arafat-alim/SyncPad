@@ -2,7 +2,7 @@
 
 import { liveblocks } from "../liveblocks";
 import { nanoid } from "nanoid";
-import { parseStringify } from "../utils";
+import { getAccessType, parseStringify } from "../utils";
 import { revalidatePath } from "next/cache";
 
 export const createDocuments = async ({
@@ -93,5 +93,62 @@ export const getDocuments = async (email: string) => {
     return parseStringify(rooms);
   } catch (err) {
     console.log("Error occured while fetching the rooms");
+  }
+};
+
+export const updateDocumentAccess = async ({
+  roomId,
+  userType,
+  updatedBy,
+  email,
+}: ShareDocumentParams) => {
+  try {
+    //! get all the user access type
+    const usersAccesses: RoomAccesses = {
+      [email]: getAccessType(userType) as AccessType,
+    };
+
+    //! updated the access type
+    const room = await liveblocks.updateRoom(roomId, {
+      usersAccesses,
+    });
+
+    if (room) {
+      // TODO: Send notification to the user.
+    }
+
+    revalidatePath(`/documents/${roomId}`);
+
+    return parseStringify(room);
+  } catch (err) {
+    console.log(`Error occured while updating the user access type: ${err}`);
+  }
+};
+
+export const removeCollaborator = async ({
+  roomId,
+  email,
+}: {
+  roomId: string;
+  email: string;
+}) => {
+  try {
+    const room = await liveblocks.getRoom(roomId);
+
+    if (room.metadata.email === email) {
+      throw new Error("You cannot remove yourself from the document");
+    }
+
+    const updatedRoom = await liveblocks.updateRoom(roomId, {
+      usersAccesses: {
+        [email]: null,
+      },
+    });
+
+    revalidatePath(`/documents/${roomId}`);
+
+    return parseStringify(updatedRoom);
+  } catch (err) {
+    console.log(`Error occured while removing the collaborator: ${err}`);
   }
 };
