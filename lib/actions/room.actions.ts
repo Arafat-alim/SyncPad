@@ -33,7 +33,7 @@ export const createDocuments = async ({
     const room = await liveblocks.createRoom(roomId, {
       metadata,
       usersAccesses,
-      defaultAccesses: ["room:write"], // TODO: we need to change it back to empty array
+      defaultAccesses: [],
     });
 
     revalidatePath("/"); // read more about at:https://nextjs.org/docs/app/api-reference/functions/revalidatePath
@@ -57,11 +57,12 @@ export const getDocument = async ({
   try {
     //! check if any rooms is present
     const room = await liveblocks.getRoom(roomId);
+
     //! check user has access
-    // const hasAccess = Object.keys(room.usersAccesses).includes(userId);
-    // if (!hasAccess) {
-    //   throw new Error("You do not have access to this document");
-    // }
+    const hasAccess = Object.keys(room.usersAccesses).includes(userId);
+    if (!hasAccess) {
+      throw new Error("You do not have access to this document");
+    }
 
     return parseStringify(room);
   } catch (err) {
