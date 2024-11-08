@@ -182,6 +182,10 @@
   height: fit-content !important;
 }
 
+.cl-logoBox {
+  height: 65px !important;
+}
+
 .cl-cardBox,
 .cl-signIn-start,
 .cl-signUp-start,
