@@ -1,16 +1,28 @@
-![Project Banner](https://res.cloudinary.com/cocoder/image/upload/v1731095119/Projects/SyncPad/www.sync-pad-pro.vercel.app_dnqsft.gif)
+![Project Banner](https://res.cloudinary.com/cocoder/image/upload/v1731096003/Projects/SyncPad/www.sync-pad-pro.vercel.app_1_et5rm3.gif)
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Project Overview](#project-overview)
 - [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
+- [Tech Stacks](#tech-stacks)
 - [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 - [Architecture and Core Concepts](#architecture-and-core-concepts)
-- [Screenshots & Demonstrations](#screenshots--demonstrations)
-- [Challenges & Solutions](#challenges--solutions)
+  - [1. **Real-Time Collaboration with Liveblocks**](#1-real-time-collaboration-with-liveblocks)
+  - [2. **Authentication with Clerk**](#2-authentication-with-clerk)
+  - [3. **Rich-Text Editing with Lexical**](#3-rich-text-editing-with-lexical)
+- [Screenshots \& Demonstrations](#screenshots--demonstrations)
+  - [1. **Home Page**](#1-home-page)
+  - [2. **Real-Time Editing**](#2-real-time-editing)
+- [Challenges \& Solutions](#challenges--solutions)
+  - [Challenge 1: Real-Time Synchronization](#challenge-1-real-time-synchronization)
+  - [Challenge 2: Rich-Text Editing with Performance](#challenge-2-rich-text-editing-with-performance)
+  - [Challenge 3: Responsive Design](#challenge-3-responsive-design)
 - [Future Improvements](#future-improvements)
 - [License](#license)
+- [Contact \& Contributions](#contact--contributions)
 
 ---
 
@@ -30,9 +42,9 @@ With Live Docs, you can create, edit, and share documents with multiple users in
 - **Responsive UI**: Native-like, fully responsive design for desktop and mobile.
 - **Authentication & Security**: Hassle-free user authentication with Clerk.
 - **Advanced UI/UX Features**:
-  - Nested comments, tagging, and emoji reactions.
-  - Floating comments and instant notifications.
-  - User presence indicators for collaborative environments.
+    - Nested comments, tagging, and emoji reactions.
+    - Floating comments and instant notifications.
+    - User presence indicators for collaborative environments.
 
 ---
 
@@ -61,7 +73,7 @@ Ensure you have Node.js and npm installed.
 
 ```bash
 git clone https://github.com/Arafat-alim/sync-pad.git
-cd livedocs
+cd sync-pad
 ```
 
 2. Install dependencies:
@@ -109,15 +121,11 @@ npm run dev
 
 ### 1. **Home Page**
 
-![Home Page Screenshot](path/to/homepage-screenshot.png) <!-- Add a screenshot of your home page -->
+![Home Page Screenshot](https://res.cloudinary.com/cocoder/image/upload/v1731096654/Projects/SyncPad/Screen_Shot_2024-11-09_at_01.40.25-fullpage_lavmaj.png) <!-- Add a screenshot of your home page -->
 
 ### 2. **Real-Time Editing**
 
-![Real-Time Editing GIF](path/to/editing-demo.gif) <!-- Add a GIF showing real-time editing and collaboration -->
-
-### 3. **User Authentication Flow**
-
-![Authentication Screenshot](path/to/authentication-screenshot.png) <!-- Screenshot of the sign-in/sign-up page -->
+![Real-Time Editing GIF](https://res.cloudinary.com/cocoder/image/upload/v1731097108/Projects/SyncPad/kFy3vUSyTT_u65xmk.png) <!-- Add a GIF showing real-time editing and collaboration -->
 
 ---
 
@@ -147,7 +155,7 @@ npm run dev
 
 ## License
 
-This project is licensed under the [MIT License](https://rem.mit-license.org).
+This project is licensed under the [MIT License](<[https://rem.mit-license.org](https://rem.mit-license.org)>).
 
 ---
 
