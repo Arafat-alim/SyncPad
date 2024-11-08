@@ -7,7 +7,7 @@ import { Editor } from "./editor/Editor";
 import Loader from "./Loader";
 import ActiveCollaborators from "./ActiveCollaborators";
 import { useEffect, useRef, useState } from "react";
-import { Input } from "@/components/ui/input";
+import { Input } from "./ui/input";
 import Image from "next/image";
 import { updateDocument } from "@/lib/actions/room.actions";
 import ShareModal from "./ShareModal";
