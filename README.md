@@ -1,6 +1,4 @@
-# Live Docs - Real-Time Collaborative Document Editor 🚀
-
-![Project Banner](path/to/banner-image.png) <!-- Replace with an eye-catching banner or overview image -->
+![Project Banner](https://res.cloudinary.com/cocoder/image/upload/v1731095119/Projects/SyncPad/www.sync-pad-pro.vercel.app_dnqsft.gif)
 
 ## Table of Contents
 
@@ -27,37 +25,24 @@ With Live Docs, you can create, edit, and share documents with multiple users in
 ## Key Features
 
 - **Real-Time Collaboration**: Live, multi-user document editing with live cursors showing collaborator activity.
-
 - **Markdown Editor**: Full support for rich-text formatting and markdown.
-
 - **Flexible Document Sharing**: Invite collaborators with different access levels (viewers, editors).
-
 - **Responsive UI**: Native-like, fully responsive design for desktop and mobile.
-
 - **Authentication & Security**: Hassle-free user authentication with Clerk.
-
 - **Advanced UI/UX Features**:
-
-- Nested comments, tagging, and emoji reactions.
-
-- Floating comments and instant notifications.
-
-- User presence indicators for collaborative environments.
+  - Nested comments, tagging, and emoji reactions.
+  - Floating comments and instant notifications.
+  - User presence indicators for collaborative environments.
 
 ---
 
-## Tech Stack
+## Tech Stacks
 
 - **Frontend**: [React](https://reactjs.org/), [Next.js](https://nextjs.org/)
-
 - **Real-Time Collaboration**: [Liveblocks](https://liveblocks.io/)
-
 - **Rich-Text Editor**: [Lexical](https://lexical.dev/)
-
 - **Authentication**: [Clerk](https://clerk.dev/)
-
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-
 - **Performance Monitoring**: [Sentry](https://sentry.io/)
 
 ---
@@ -75,7 +60,7 @@ Ensure you have Node.js and npm installed.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/livedocs.git
+git clone https://github.com/Arafat-alim/sync-pad.git
 cd livedocs
 ```
 
@@ -168,6 +153,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact & Contributions
 
-For suggestions, contributions, or to report issues, please feel free to [open an issue](https://github.com/yourusername/livedocs/issues) or [contact me](mailto:youremail@example.com).
+For suggestions, contributions, or to report issues, please feel free to [open an issue](https://github.com/Arafat-alim/sync-pad/issues) or [contact me](mailto:arafat.aman.alim@gmail.com).
 
 ---
