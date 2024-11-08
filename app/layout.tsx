@@ -12,7 +12,8 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "Sync Pad - Bringing Teams Together, One Idea at a Time",
-  description: "Your Go to Collaborative App",
+  description:
+    "A seamless online collaboration platform that brings your team together to create, edit, and share documents in real-time. Experience effortless teamwork, anytime, anywhere.",
 };
 
 export default function RootLayout({
